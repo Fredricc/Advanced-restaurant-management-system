@@ -118,6 +118,65 @@ E_Queen_Park_Cake.set("0")
 
 Dateoforder.set(time.strftime("%d/%m/%Y"))
 
+#=========================Exit Function================
+
+
+def iExit():
+    iExit = tkinter.messagebox.askyesno("Exit Restaurant System","Confirm if you want to exit")
+    if iExit > 0:
+        root.destroy()
+        return
+
+def Reset():
+    PaidTax.set("")
+    SubTotal.set("")
+    TotalCost.set("")
+    CostofDrinks.set("")
+    CostofCakes.set("")
+    ServiceCharge.set("")
+    txtReceipt.delete("1.0".END)
+
+    
+    E_Latta.set("0")
+    E_Espresso.set("0")
+    E_Iced_Latta.set("0")
+    E_Vale_Coffee.set("0")
+    E_Cappuccino.set("0")
+    E_African_Coffee.set("0")
+    E_American_Coffee.set("0")
+    E_Iced_Cappuccino.set("0")
+    E_House_Coffee.set("0")
+
+
+    E_SchoolCake.set("0")
+    E_Sunny_AO_Cake.set("0")
+    E_Jonathan_YO_Cake.set("0")
+    E_West_African_Cake.set("0")
+    E_Nairobi_Chocolate_Cake.set("0")
+    E_Strawberry_Cheese_Cake.set("0")
+    E_Kilburn_Chocolate_Cake.set("0")
+    E_Cariton_Hill_Cake.set("0")
+    E_Queen_Park_Cake.set("0")
+    
+    var1.set(0)
+    var2.set(0)
+    var3.set(0)
+    var4.set(0)
+    var5.set(0)
+    var6.set(0)
+    var7.set(0)
+    var8.set(0)
+    var9.set(0)
+    var10.set(0)
+    var11.set(0)
+    var12.set(0)
+    var13.set(0)
+    var14.set(0)
+    var15.set(0)
+    var16.set(0)
+    var17.set(0)
+    var18.set(0)
+
 #========================Drinks===================
 
 Latta =Checkbutton(Drinks_F, text="Latta\t\t\t\t\t", variable=var1, onvalue =1, offvalue=0, font=('arial',10,'bold'), bg='Powder Blue').grid(row=0, sticky=W)
@@ -226,7 +285,7 @@ txtReceipt.grid(row=0, column=0)
 btnTotal = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Total', bg='powder blue').grid(row=0, column=0)
 btnReceipt = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Receipt', bg='powder blue').grid(row=0, column=1)
 btnReset = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Reset', bg='powder blue').grid(row=0, column=2)
-btnExit = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Exit', bg='powder blue').grid(row=0, column=3)
+btnExit = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Exit', bg='powder blue', command= iExit).grid(row=0, column=3)
 
 #========================Calculator Display==============
 
