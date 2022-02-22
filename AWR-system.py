@@ -424,7 +424,39 @@ def chkQueen_Park_Cake():
         txtQueen_Park_Cake.configure(state = NORMAL)
         E_Queen_Park_Cake.set("0")
         
-        
+def Receipt():
+    txtReceipt.delete("1.0", END)
+    x = random.randint(10903, 609235)
+    randomRef = str(x)
+    Receipt_Ref.set("BILL" + randomRef)
+    
+    txtReceipt.insert(END, 'Receipt Ref:\t\t\t' + Receipt_Ref.get()+ '\t'+Dateoforder.get()+"\n")
+    txtReceipt.insert(END, 'Items:\t\t\t' + "Cost of Items\n")
+    txtReceipt.insert(END, 'Latta:\t\t\t' + Receipt_Ref.get()+ E_Latta.get() +"\n")
+    
+    txtReceipt.insert(END, 'Espresso:\t\t\t\t\t' +  E_Espresso.get() +"\n")
+    txtReceipt.insert(END, 'Iced Latte:\t\t\t\t\t' +  E_Iced_Latte.get() +"\n")
+    txtReceipt.insert(END, 'Vale Coffee:\t\t\t\t\t' +  E_Vale_Coffee.get() +"\n")
+    txtReceipt.insert(END, 'Cappuccino:\t\t\t\t\t' +  E_Cappuccino.get() +"\n")
+    txtReceipt.insert(END, 'African Coffee:\t\t\t\t\t' +  E_African_Coffee.get() +"\n")
+    txtReceipt.insert(END, 'American Coffee:\t\t\t\t\t' +  E_American_Coffee.get() +"\n")
+    txtReceipt.insert(END, 'Iced Cappuccino:\t\t\t\t\t' +  E_Iced_Cappuccino.get() +"\n")
+    txtReceipt.insert(END, 'House Coffee:\t\t\t\t\t' +  E_House_Coffee.get() +"\n")
+    txtReceipt.insert(END, 'School Cake:\t\t\t\t\t' +  E_SchoolCake.get() +"\n")
+    txtReceipt.insert(END, 'Sunny AO Cake:\t\t\t\t\t' +  E_Sunny_AO_Cake.get() +"\n")
+    txtReceipt.insert(END, 'Jonathan O Cake:\t\t\t\t\t' +  E_Jonathan_YO_Cake.get() +"\n")
+    txtReceipt.insert(END, 'West African Cake:\t\t\t\t\t' +  E_West_African_Cake.get() +"\n")
+    txtReceipt.insert(END, 'Nairobi Chocolate Cake:\t\t\t\t\t' +  E_Nairobi_Chocolate_Cake.get() +"\n")
+    txtReceipt.insert(END, 'Strawberry Cheese Cake:\t\t\t\t\t' +  E_Strawberry_Cheese_Cake.get() +"\n")
+    txtReceipt.insert(END, 'Kilburn Chocolate Cake:\t\t\t\t\t' +  E_Kilburn_Chocolate_Cake.get() +"\n")
+    txtReceipt.insert(END, 'Cariton Hill Cake:\t\t\t\t\t' +  E_Cariton_Hill_Cake.get() +"\n")
+    txtReceipt.insert(END, 'Queen Park Cake:\t\t\t\t\t' +  E_Queen_Park_Cake.get() +"\n")
+    
+    txtReceipt.insert(END, 'CostofDrinks:\t\t\t\t' + CostofDrinks.get() +"\nTax Paid:\t\t\t\t" + PaidTax.get() + "\n")
+    txtReceipt.insert(END, 'CostofCakes:\t\t\t\t' + CostofCakes.get() +"\nSubTotal:\t\t\t\t" +  str(SubTotal.get()) + "\n")
+    txtReceipt.insert(END, 'ServiceCharge:\t\t\t\t' + ServiceCharge.get() +"\nTotal Cost:\t\t\t\t" +str(TotalCost.get()) + "\n")
+    
+    
 #========================Drinks===================
 
 Latta =Checkbutton(Drinks_F, text="Latta\t\t\t\t\t", variable=var1, onvalue =1, offvalue=0, font=('arial',10,'bold'), bg='Powder Blue', command = chkLatta ).grid(row=0, sticky=W)
@@ -564,7 +596,7 @@ txtReceipt.grid(row=0, column=0)
 #========================Buttons==============
 btnTotal = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Total', bg='powder blue', command= CostofItem ).grid(row=0, column=0)
 
-btnReceipt = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Receipt', bg='powder blue').grid(row=0, column=1)
+btnReceipt = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Receipt', bg='powder blue', command = Receipt).grid(row=0, column=1)
 
 btnReset = Button(Buttons_F,padx=16, pady=1, bd=7, fg='black', font=('arial',16,'bold'), width=4, text='Reset', bg='powder blue', command= Reset).grid(row=0, column=2)
 
